@@ -7,13 +7,13 @@ import { useNavigate } from 'react-router-dom'
 import { useStateValue } from '../StateProvider';
 import { actionTypes } from '../reducer'
 
-function Search({ hideButtons = false}) {
+function Search({ hideButtons}) {
     const [{}, dispatch] = useStateValue()
 
     const [input, setInput] = useState('')
     const navigate = useNavigate();
 
-    const search = e => {
+    const search = (e) => {
         e.preventDefault()
         navigate("/search")
         console.log(input);
